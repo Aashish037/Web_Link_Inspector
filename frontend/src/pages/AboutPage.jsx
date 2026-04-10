@@ -41,7 +41,7 @@ export default function AboutPage() {
     >
       {/* Header */}
       <div style={{ marginBottom: "3rem" }}>
-        <p className="section-title">About PhishGuard</p>
+        <p className="section-title">About Web_Link_Inspector</p>
         <h1
           style={{
             fontSize: "2rem",
@@ -60,8 +60,8 @@ export default function AboutPage() {
             maxWidth: "560px",
           }}
         >
-          PhishGuard uses a 1D Convolutional Neural Network trained on 11,054
-          URLs to detect phishing attacks from URL features alone.
+          Web_Link_Inspector uses a 1D Convolutional Neural Network trained on
+          11,054 URLs to detect phishing attacks from URL features alone.
         </p>
       </div>
 

@@ -1,4 +1,4 @@
-# PhishGuard — Backend (FastAPI)
+# Web_Link_Inspector — Backend (FastAPI)
 
 This folder contains the FastAPI server for extracting URL features and running model predictions.
 
@@ -24,7 +24,7 @@ backend/
 
 ## Setup (create and use a virtual environment)
 
-1. Open a terminal or PowerShell in `d:\phishguard\backend`
+1. Open a terminal or PowerShell in `d:\Web_Link_Inspector\backend`
 2. Create a new virtual environment:
    ```powershell
    python -m venv venv

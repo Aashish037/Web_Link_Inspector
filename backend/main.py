@@ -6,7 +6,7 @@ import traceback
 from feature_extractor import extract_features, features_to_list, FULL_COLUMN_ORDER
 from predictor import predict, get_feature_columns
 
-app = FastAPI(title="PhishGuard API")
+app = FastAPI(title="Web_Link_Inspector API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,7 +27,7 @@ class PredictRequest(BaseModel):
 
 @app.get("/")
 def home():
-    return {"status": "ok", "message": "PhishGuard API running"}
+    return {"status": "ok", "message": "Web_Link_Inspector API running"}
 
 
 @app.post("/extract")

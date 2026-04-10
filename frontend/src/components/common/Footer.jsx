@@ -25,7 +25,7 @@ export default function Footer() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <Shield size={11} color="var(--color-cyber-green)" />
-          PHISHGUARD — Dissertation Demo Project
+          Web_Link_Inspector — Dissertation Demo Project
         </div>
         <div>Dataset: 11,054 URLs · CNN Model · 20 Selected Features</div>
         <div style={{ color: "var(--color-cyber-green)", opacity: 0.6 }}>

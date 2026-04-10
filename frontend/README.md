@@ -1,9 +1,10 @@
-# PhishGuard — Frontend (React + Vite)
+# Web_Link_Inspector — Frontend (React + Vite)
 
-This folder contains the React web client for the PhishGuard application.
+This folder contains the React web client for the Web_Link_Inspector application.
 The frontend calls the backend API to extract URL features and display predictions.
 
 ## Frontend folder structure
+
 ```
 frontend/
 ├── package.json            ← npm scripts and dependencies
@@ -40,12 +41,14 @@ frontend/
 ```
 
 ## Prerequisites
+
 - Node.js 18+ installed
 - npm available in your PATH
 - Backend server running separately for full API access
 
 ## Setup and run
-1. Open a terminal in `d:\phishguard\frontend`
+
+1. Open a terminal in `d:\Web_Link_Inspector\frontend`
 2. Install dependencies:
    ```bash
    npm install
@@ -58,22 +61,27 @@ frontend/
    - `http://localhost:5173`
 
 ## Build and preview
+
 Build the production bundle:
+
 ```bash
 npm run build
 ```
 
 Preview the production build locally:
+
 ```bash
 npm run preview
 ```
 
 ## Useful scripts
+
 - `npm run dev` — start the Vite development server
 - `npm run build` — build the frontend for production
 - `npm run preview` — preview the built app
 - `npm run lint` — run ESLint on the frontend code
 
 ## Notes
+
 - Start the backend server before using the frontend if you want real API responses.
 - The frontend code is located under `src/`, with UI components in `src/components/` and API helpers in `src/services/api.js`.
