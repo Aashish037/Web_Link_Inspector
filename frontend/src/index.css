@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* ── Colors ─────────────────────────────────── */
+  --color-cyber-bg:          #020c02;
+  --color-cyber-card:        #071407;
+  --color-cyber-card-2:      #0c1f0c;
+  --color-cyber-border:      #1c3d1c;
+  --color-cyber-border-2:    #2d5a2d;
+  --color-cyber-green:       #00e676;
+  --color-cyber-green-dim:   #4caf50;
+  --color-cyber-green-dark:  #1b5e20;
+  --color-cyber-text:        #e8f5e9;
+  --color-cyber-text-dim:    #a5d6a7;
+  --color-cyber-text-muted:  #558b2f;
+  --color-cyber-red:         #ff5252;
+  --color-cyber-red-dim:     #ef9a9a;
+  --color-cyber-red-dark:    #3e0000;
+  --color-cyber-yellow:      #ffd740;
+  --color-cyber-yellow-dark: #3e2c00;
+
+  /* ── Font ───────────────────────────────────── */
+  --font-family-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* ── Shadows ────────────────────────────────── */
+  --shadow-cyber:       0 0 25px rgba(0, 230, 118, 0.12);
+  --shadow-cyber-lg:    0 0 50px rgba(0, 230, 118, 0.18);
+  --shadow-cyber-red:   0 0 25px rgba(255, 82, 82, 0.18);
+  --shadow-cyber-inner: inset 0 0 20px rgba(0, 230, 118, 0.05);
+
+  /* ── Keyframes ──────────────────────────────── */
+  --animate-glow:    glow 2.5s ease-in-out infinite;
+  --animate-flicker: flicker 3s ease-in-out infinite;
+  --animate-fadeIn:  fadeIn 0.4s ease-out forwards;
+  --animate-scanline: scanline 4s linear infinite;
+
+  @keyframes scanline {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(0,230,118,0.2); }
+    50%       { box-shadow: 0 0 30px rgba(0,230,118,0.5); }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.8; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ── Base ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--color-cyber-bg);
+  color: var(--color-cyber-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cyber-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-cyber-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-cyber-green); }
+
+/* ── Components ─────────────────────────────── */
+.cyber-card {
+  background-color: var(--color-cyber-card);
+  border: 1px solid var(--color-cyber-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 0 25px rgba(0, 230, 118, 0.06);
+  transition: all 0.25s ease;
+}
+.cyber-card:hover {
+  border-color: #2d5a2d;
+  box-shadow: 0 0 35px rgba(0, 230, 118, 0.1);
+}
+
+.btn-cyber {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: var(--color-cyber-green);
+  color: var(--color-cyber-bg);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+  cursor: pointer;
+  border: none;
+}
+.btn-cyber:hover {
+  box-shadow: 0 0 35px rgba(0, 230, 118, 0.5);
+  transform: translateY(-1px);
+}
+.btn-cyber:active  { transform: translateY(0); }
+.btn-cyber:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  border: 1px solid var(--color-cyber-border);
+  color: var(--color-cyber-text-dim);
+  background: transparent;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  border-color: var(--color-cyber-green);
+  color: var(--color-cyber-green);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.15);
+}
+
+.cyber-input {
+  width: 100%;
+  background-color: var(--color-cyber-card-2);
+  border: 1px solid var(--color-cyber-border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-cyber-text);
+  outline: none;
+  transition: all 0.2s;
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+}
+.cyber-input::placeholder { color: var(--color-cyber-text-muted); }
+.cyber-input:focus {
+  border-color: var(--color-cyber-green);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.15);
+}
+
+.badge-green  { padding: 0.125rem 0.5rem; font-size: 0.75rem; border-radius: 9999px; background: var(--color-cyber-green-dark); color: var(--color-cyber-green); border: 1px solid rgba(0,230,118,0.3); }
+.badge-red    { padding: 0.125rem 0.5rem; font-size: 0.75rem; border-radius: 9999px; background: var(--color-cyber-red-dark);   color: var(--color-cyber-red);   border: 1px solid rgba(255,82,82,0.3); }
+.badge-yellow { padding: 0.125rem 0.5rem; font-size: 0.75rem; border-radius: 9999px; background: var(--color-cyber-yellow-dark); color: var(--color-cyber-yellow); }
+.badge-gray   { padding: 0.125rem 0.5rem; font-size: 0.75rem; border-radius: 9999px; background: var(--color-cyber-card-2); color: var(--color-cyber-text-dim); border: 1px solid var(--color-cyber-border); }
+
+.section-title {
+  color: var(--color-cyber-green);
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Utilities ──────────────────────────────── */
+.scanline::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,230,118,0.4), transparent);
+  animation: var(--animate-scanline);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0,230,118,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,230,118,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(0,230,118,0.6), 0 0 40px rgba(0,230,118,0.3);
+}
+
+.gradient-border {
+  position: relative;
+  background:
+    linear-gradient(#071407, #071407) padding-box,
+    linear-gradient(135deg, #00e676, #1b5e20, #00e676) border-box;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
